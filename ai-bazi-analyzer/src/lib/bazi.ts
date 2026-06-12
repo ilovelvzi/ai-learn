@@ -183,11 +183,10 @@ function getDayPillar(year: number, month: number, day: number): Pillar {
 function getHourPillar(dayTianGan: string, hour: number): Pillar {
   // 确定时辰地支
   let zhiIndex = 0;
-  if (hour === 23 || hour === 0) {
+  if (hour >= 23 || hour < 1) {
     zhiIndex = 0; // 子时
   } else {
     zhiIndex = Math.ceil(hour / 2);
-    if (hour >= 23) zhiIndex = 0;
   }
   const diZhi = DI_ZHI[zhiIndex];
 
